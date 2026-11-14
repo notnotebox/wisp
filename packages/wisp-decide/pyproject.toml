@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wisp-decide"
+version = "0.1.2"
+description = "Wisp v0.1.2 4B: typed moderation decisions from a LoRA adapter, one forward pass, no generated tokens."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+dependencies = []
+
+[project.optional-dependencies]
+model = ["torch>=2.4", "transformers>=5.0", "peft>=0.17", "bitsandbytes>=0.45", "accelerate>=1.0"]
+
+[project.scripts]
+wisp-decide = "wisp_decide.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

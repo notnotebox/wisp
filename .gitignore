@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Models and local artifacts
+/models/
+*.safetensors
+*.bin
+*.pt
+
+# Rust build output
+rust/target/
+
+# Local environment
+.env
+.env.*

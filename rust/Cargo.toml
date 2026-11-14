@@ -1,0 +1,48 @@
+[package]
+name = "wisp-runtime"
+version = "0.1.0"
+edition = "2021"
+description = "Native Rust/Candle runtime for Wisp v0.1.2 4B"
+license = "Apache-2.0"
+
+[lib]
+name = "wisp_runtime"
+path = "src/lib.rs"
+
+[[bin]]
+name = "wisp-server"
+path = "src/bin/wisp-server.rs"
+required-features = ["inference"]
+
+[[bin]]
+name = "qwen35-prefill-bench"
+path = "src/bin/qwen35-prefill-bench.rs"
+required-features = ["inference"]
+
+[features]
+default = []
+inference = [
+    "dep:anyhow",
+    "dep:axum",
+    "dep:candle-core",
+    "dep:candle-nn",
+    "dep:candle-transformers",
+    "dep:clap",
+    "dep:tokenizers",
+    "dep:tokio",
+    "dep:tower-http",
+]
+cuda = ["inference", "candle-core/cuda", "candle-transformers/cuda"]
+
+[dependencies]
+anyhow = { version = "1", optional = true }
+axum = { version = "0.8", optional = true }
+candle-core = { path = "vendor/candle/candle-core", optional = true }
+candle-nn = { path = "vendor/candle/candle-nn", optional = true }
+candle-transformers = { path = "vendor/candle/candle-transformers", optional = true }
+clap = { version = "4", features = ["derive", "env"], optional = true }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokenizers = { version = "0.21", default-features = false, features = ["onig"], optional = true }
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "net", "signal"], optional = true }
+tower-http = { version = "0.6", features = ["cors", "trace"], optional = true }

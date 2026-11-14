@@ -1,0 +1,79 @@
+{
+  "cases": 8,
+  "matches": 7,
+  "max_delta": 0.3423,
+  "rows": [
+    {
+      "id": "direct_insult_en",
+      "python": "REVIEW",
+      "candle": "REVIEW",
+      "match": true,
+      "max_delta": 0.0712,
+      "python_ms": 152,
+      "candle_ms": 95
+    },
+    {
+      "id": "neutral_en",
+      "python": "NEED_CONTEXT",
+      "candle": "NEED_CONTEXT",
+      "match": true,
+      "max_delta": 0.1934,
+      "python_ms": 163,
+      "candle_ms": 77
+    },
+    {
+      "id": "victim_quote",
+      "python": "QUOTING_OR_REPORTING",
+      "candle": "QUOTING_OR_REPORTING",
+      "match": true,
+      "max_delta": 0.0005,
+      "python_ms": 122,
+      "candle_ms": 78
+    },
+    {
+      "id": "threat_ambiguous",
+      "python": "THREAT",
+      "candle": "THREAT",
+      "match": true,
+      "max_delta": 0.0001,
+      "python_ms": 132,
+      "candle_ms": 79
+    },
+    {
+      "id": "fr_short_slang",
+      "python": "NEED_CONTEXT",
+      "candle": "REVIEW",
+      "match": false,
+      "max_delta": 0.3423,
+      "python_ms": 107,
+      "candle_ms": 91
+    },
+    {
+      "id": "username_extremist",
+      "python": "REVIEW",
+      "candle": "REVIEW",
+      "match": true,
+      "max_delta": 0.0248,
+      "python_ms": 154,
+      "candle_ms": 94
+    },
+    {
+      "id": "username_harmless",
+      "python": "NO_ACTION",
+      "candle": "NO_ACTION",
+      "match": true,
+      "max_delta": 0.0019,
+      "python_ms": 106,
+      "candle_ms": 79
+    },
+    {
+      "id": "report_false",
+      "python": "INVALID_REPORT",
+      "candle": "INVALID_REPORT",
+      "match": true,
+      "max_delta": 0.0,
+      "python_ms": 153,
+      "candle_ms": 69
+    }
+  ]
+}
